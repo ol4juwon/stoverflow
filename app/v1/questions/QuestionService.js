@@ -18,11 +18,13 @@ exports.getQuestionById = async (id) =>{
     return  {data: question}
 }
 exports.deleteQuestion = async (id) =>  {
-
-    return {data: "deleted"}	
+const delQuestion = await Question.findByIdAndDelete(id);
+if(delQuestion.error)return {error: delQuestion.error}
+return {data: delQuestion}
 }
 
 exports.getAllQuestion = async () =>{
-
-    return {data: "all questions"}	
+const questions = await Question.findAll();
+if(questions.error)return {error: questions.error}
+return {data: questions}
 }

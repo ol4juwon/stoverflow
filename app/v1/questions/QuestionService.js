@@ -3,8 +3,8 @@ const mongoose = require("mongoose")
 const Question = require('./QuestionModel')
 
 exports.postQuestion = async  (payload) =>{
-    const {question,userId, category} = payload;
-    const newQuestion = new Question({question,userId, category});
+    const {question,username, category} = payload;
+    const newQuestion = new Question({question,username, category, tags});
     const saveQuestion = await newQuestion.save();
     const {error} = saveQuestion;
     if (error) return { error :  error.message}

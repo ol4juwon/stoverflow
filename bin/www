@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+ require('../cacheManager')
  const app = require("../App.js");
  // const debug  = require("debug")("app:debug")
  const http = require('http');

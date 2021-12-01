@@ -1,14 +1,17 @@
 "use strict"
 require('dotenv').config({})
+
 const createError = require('http-errors')
 // const rateLimit = require('express-rate-limit');
 
 let express = require('express')
 const app = express()
+require('./cacheManager')
 const moment  = require("moment")
 // app.use("/api/v1/auth/",limiter)
 // app.set("trust proxy", 1)
 require("./app/helper");
+
 require('express-async-errors')
 require('./startups')(app, express);
 

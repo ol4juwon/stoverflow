@@ -12,3 +12,8 @@ exports.postAnswer = async (questionID, username, answer) => {
     if(ans.error) return { error: ans.error };
     return {data: ans}
 }
+exports.getAnswerByQuestionID = async (questionID) => {
+    const ans = await answers.find({questionID});
+    if(ans.error) return { error: ans.error };
+    return {data: ans}
+}

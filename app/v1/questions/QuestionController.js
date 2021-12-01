@@ -2,9 +2,17 @@
 
 const questService = require('./QuestionService.js');
 const answers = require('../answers/AnswerService')
+const redis = require("redis")
+const redisClient = redis.createClient("redis://localhost:6379")
 
 exports.getAll = async (req, res) =>  {
     const {error,data} = await questService.getAllQuestions();
+    redisClient.exists("Questions",  (error, result) =>{
+        if(result){
+        console.log(result)}else{
+            console.log(error)
+        }
+    }).catch()
     if(error) return createErrorResponse(res, error);
 
     return createSuccessResponse(res, data);

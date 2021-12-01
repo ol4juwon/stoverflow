@@ -3,6 +3,7 @@
 ## Framework
 - Nodejs
 - MongoDb
+- Redis
 
 ## Endpoints [api/v1/]
 ### Questions [questions]

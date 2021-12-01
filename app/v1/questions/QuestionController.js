@@ -28,7 +28,8 @@ exports.getById = async (req, res) => {
    
     if(answersForId.error) data.answers = "Error Fetching answers";
     const fullQuestion = {result: {question: data, answers: answersForId.data}}
-        return createSuccessResponse(res,{result: fullQuestion,200 );
+    const setFull = await cache.setAsync(`${id}`, JSON.stringify(fullQuestion))
+        return createSuccessResponse(res, fullQuestion,200 );
 }
 exports.postQuestion  = async (req, res) => {
     const payload = req.body 

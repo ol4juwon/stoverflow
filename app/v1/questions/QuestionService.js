@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const Question = require('./QuestionModel')
 
 exports.postQuestion = async  (payload) =>{
-    const {question,username, category} = payload;
+    const {question,username, category,tags} = payload;
     const newQuestion = new Question({question,username, category, tags});
     const saveQuestion = await newQuestion.save();
     const {error} = saveQuestion;
@@ -11,8 +11,8 @@ exports.postQuestion = async  (payload) =>{
     return {data: saveQuestion}
 }
 exports.getQuestionById = async (id) =>{
-    const question  = Question.findById(id);
-
+    const question  =await  Question.findById(id);
+console.log("id:",id, question)
     if(question.error)return {error: question.error}
 
     return  {data: question}
@@ -23,8 +23,8 @@ if(delQuestion.error)return {error: delQuestion.error}
 return {data: delQuestion}
 }
 
-exports.getAllQuestion = async () =>{
-const questions = await Question.findAll();
+exports.getAllQuestions = async () =>{
+const questions = await Question.find();
 if(questions.error)return {error: questions.error}
 return {data: questions}
 }

@@ -19,9 +19,9 @@ const questionSchema  =  mongoose.Schema({
     tiestamps: true,
 }
 )
-questionSchema.post("save", function(error, doc, next) {
-    if(error) console.log(error);
-    console.log("Question saved", doc)
+questionSchema.post("save", function(question) {
+    
+    console.log("Question saved", question)
     
 }
 )

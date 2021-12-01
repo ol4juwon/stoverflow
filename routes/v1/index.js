@@ -9,7 +9,7 @@ const answerRouter = require('./answers') //  Todo answers router
 
 // router.use('/auth', authRouter);
 router.use('/question', questionRouter);
-// router.use('/answer', answerRouter);
+router.use('/answer', answerRouter);
 // router.use('/comment',commentRouter);
 
 module.exports  = router;

@@ -10,5 +10,5 @@ exports.postAnswer = async (questionID, username, answer) => {
     });
     const ans =  await newAnswer.save();
     if(ans.error) return { error: ans.error };
-    retun {data: }
+    return {data: ans}
 }

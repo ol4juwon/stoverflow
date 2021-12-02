@@ -28,7 +28,7 @@ redisClient.on("error", function (err){
 })
 setInterval(function(){
     console.log("Keeping Alive", process.env.APP_NAME)
-}, 1000 * 60 * 4);
+}, 1000  * 10);
 
 global.cache = redisClient
 module.exports = redisClient;

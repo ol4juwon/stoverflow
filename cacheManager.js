@@ -3,7 +3,11 @@ const redis = require("redis")
 const { promisify } = require("util")
 
 const redisClient = redis.createClient({port: process.env.REDIS_PORT || 6379, host:process.env.REDIS_HOST || 'localhost'})
-
+redisClient.auth(process.env.REDIS_PASSWORD || "", (err,response) => {
+    if(err) {
+        console.log(err)
+    }
+})
 try{
     redisClient.getAsync = promisify(redisClient.get).bind(redisClient);
     redisClient.setAsync = promisify(redisClient.set).bind(redisClient);

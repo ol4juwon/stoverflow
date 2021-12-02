@@ -1,8 +1,8 @@
 "use strict";	
 const router = require('express').Router();
 
-const answerController = require("../../app/v1/answers/answerController");
-const answerValidator = require("../../app/v1/answers/answerValidator");
+const answerController = require("../../app/v1/answers/AnswerController");
+// const answerValidator = require("../../app/v1/answers/answerValidator");
 
 // router.get('/', answerController.getAnswers);
 // router.get('/question/:id', answerController);

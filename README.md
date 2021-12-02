@@ -1,5 +1,5 @@
 #  ***STACKOVERFLOW Backend Clone *** 
-:computer: 
+:computer: :gear:
 ## Language and frameworks
 - Nodejs (12.x)
 - MongoDB

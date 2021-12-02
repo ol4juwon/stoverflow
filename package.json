@@ -4,7 +4,7 @@
   "description": "stackoverflow clone ",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "test": "jest --watchAll --verbose --env=node"
    },
   "repository": {

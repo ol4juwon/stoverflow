@@ -12,7 +12,9 @@ exports.getAll = async (req, res) =>  {
     const {error,data} =  await questService.getAllQuestions();
     if(error) return createErrorResponse(res, error);
     const cacheResponse = await cache.setAsync("questions",JSON.stringify(data))
-    return createSuccessResponse(res, data);
+    console.log("cache response", cacheResponse)
+    console.log("data from service", data)
+    return createSuccessResponse(res, data, 200);
  
 }
 

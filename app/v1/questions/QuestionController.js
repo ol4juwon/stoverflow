@@ -7,7 +7,7 @@ const answers = require('../answers/AnswerService');
 exports.getAll = async (req, res) =>  { 
        let questions = await cache.getAsync("questions")
        console.log("Data from cache", questions)
-       if(questions) return createSuccessResponse(res, JSON.parse(questions),209)
+       if(questions !== "[]") return createSuccessResponse(res, JSON.parse(questions),209)
     //  const cached = await cache.getAsync('questions').catch(console.log("error"))
     const {error,data} =  await questService.getAllQuestions();
     console.log("Data from service", data)

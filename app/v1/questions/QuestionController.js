@@ -10,6 +10,7 @@ exports.getAll = async (req, res) =>  {
        if(questions) return createSuccessResponse(res, JSON.parse(questions))
     //  const cached = await cache.getAsync('questions').catch(console.log("error"))
     const {error,data} =  await questService.getAllQuestions();
+    console.log("Data from service", data)
     if(error) return createErrorResponse(res, error);
     const cacheResponse = await cache.setAsync("questions",JSON.stringify(data))
     console.log("cache response", cacheResponse)

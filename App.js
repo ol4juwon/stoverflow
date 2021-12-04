@@ -24,6 +24,7 @@ app.use((req,res,next) => {
     let requestId = getTimestamp();
     console.log("Time Started", moment().toISOString(true), "headers", req.headers);
     let url = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log("User IP", req.ip);
     console.log("Response",requestId);
 console.log(url)
     const cleanup = () => {
@@ -33,6 +34,7 @@ console.log(url)
     };
     const logFn = (a,b,c) => {
         console.log("Response", requestId);
+
         console.log("Time Ended", moment().toISOString(true));
         cleanup();
         // console.log( `[${requestId}] Response ${url}`,`${res.statusCode} ${res.statusMessage};`, {

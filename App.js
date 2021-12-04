@@ -24,7 +24,7 @@ app.use((req,res,next) => {
     let requestId = getTimestamp();
     console.log("Time Started", moment().toISOString(true), "headers", req.headers);
     let url = req.protocol + '://' + req.get('host') + req.originalUrl;
-    console.log("User IP", req.ip);
+    console.log("User IP", req.ip, req.socket.remoteAddress);
     console.log("Response",requestId);
 console.log(url)
     const cleanup = () => {

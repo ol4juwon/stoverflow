@@ -27,7 +27,7 @@
 
 ## Installation instructions
 - Download the code from github (Main branch)
-- npm i to install dependencies
+- npm install to install dependencies
 - npm start to  start application
 
 ## Environment Variables
